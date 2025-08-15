@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: oneindige-calls
+  labels:
+    app: oneindige-calls
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: oneindige-calls
+  template:
+    metadata:
+      name: oneindige-calls
+      labels:
+        app: oneindige-calls
+    spec:
+      containers:
+      - name: oneindige-calls
+        image: busybox
+        command:
+        - /bin/sh
+        - -c
+        - "while true; do wget -q -O- http://php-apache; done"
