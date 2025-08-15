@@ -1,0 +1,7 @@
+apiVersion: v2
+name: tiny-app-2
+description: TechLab helm chart
+type: application
+version: 2.0.1
+appVersion: 2.0.2
+
