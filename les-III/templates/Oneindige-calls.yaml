@@ -5,7 +5,7 @@ metadata:
   labels:
     app: oneindige-calls
 spec:
-  replicas: 1
+  replicas: 5
   selector:
     matchLabels:
       app: oneindige-calls

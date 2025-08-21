@@ -11,6 +11,7 @@ spec:
       labels:
         run: php-apache
     spec:
+      terminationGracePeriodSeconds: 5
       containers:
       - name: php-apache
         image: registry.k8s.io/hpa-example
@@ -33,3 +34,16 @@ spec:
   - port: 80
   selector:
     run: php-apache
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: php-apache
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: php-apache
+  minReplicas: 1
+  maxReplicas: 28
+  targetCPUUtilizationPercentage: 75
