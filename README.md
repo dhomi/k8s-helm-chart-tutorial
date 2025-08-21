@@ -17,19 +17,41 @@ repo:
 
 
 ### LES III
-CD naar de lesmap: ```cd les-III```
+- CD naar de lesmap: ```cd les-III```
 
-Eerst installeren we de metrics service hiervoor: 
+- creer een namespace, bv techlab: 
+```kubectl create namespace techlab```
+
+- laat alle namespaces zien: 
+```kubectl get ns```
+
+
+#### Installeer de metrics service: 
 ```kubectl apply -f templates/metric-components.yaml```
 
-Check de installatie: 
+- Check de installatie: 
 ```
 NAME             READY   UP-TO-DATE   AVAILABLE   AGE
 metrics-server   1/1     1            1           19d
 ```
-Doploy het php-apache.yaml die ```OK!``` in frontend toont: 
+
+#### Het mooiste in een tmux... dan zie je in een scherm alles live
+- SECRETS: check je deployments. Je ziet er twee
+```kubectl get secrets -n techlab -w```
+- PODS: check je pods
+```kubectl get pods -n techlab -w```
+- HPA: check je HPA
+```kubectl get hpa -n techlab -w```
+
+#### Nu het php-apache deployen
+- Deploy het php-apache.yaml die ```OK!``` in frontend toont:
 ```kubectl apply -f templates/php-apache.yaml```
 
-Laad een HPA scaling pod die loop naar de php-apache doet. De scaling.sh script gebruik je als ```Usage: ./scaling.sh <replica_count>```
 
+#### Deploy een HPA scaling 
+Loop ```wget http://php-apache``` in dit container
+- De yaml is in ```templates/Oneindige-calls.yaml``` en je kan dit via de shell script aanroepen en tegelijk ook de deployment ermee bewerken: 
+- Usage: ```./scaling.sh <replica_count>```
 Bijvoorbeeld: ```./scaling.sh 4``` zorgt ervoor dat de oneindige-calls.yaml wordt uitgevoerd met vier pods.
+*opmerking: scaling.sh moet wel uitvoerbaar zijn, anders: ```chmod + scaling.sh```*
+- Voor deze scaling deployment gebruik ik de BusyBox in een container dat een super-lichtgewicht is met veel Linux tools, zoals wget
