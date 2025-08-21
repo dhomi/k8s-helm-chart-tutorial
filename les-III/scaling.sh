@@ -5,7 +5,7 @@
 
 NAMESPACE="default" # Pas aan indien nodig
 DEPLOYMENT_NAME="oneindige-calls"
-DEPLOYMENT_FILE="les-III/templates/Oneindige-calls.yaml"
+DEPLOYMENT_FILE="templates/Oneindige-calls.yaml"
 
 REPLICAS="${1:-1}"
 
