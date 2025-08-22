@@ -15,6 +15,7 @@ spec:
       labels:
         app: oneindige-calls
     spec:
+      terminationGracePeriodSeconds: 3
       containers:
       - name: oneindige-calls
         image: busybox
