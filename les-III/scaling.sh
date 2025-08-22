@@ -3,7 +3,7 @@
 
 # Usage: ./scaling.sh <replica_count>
 
-NAMESPACE="default" # Pas aan indien nodig
+NAMESPACE="techlab" # Pas aan indien nodig
 DEPLOYMENT_NAME="oneindige-calls"
 DEPLOYMENT_FILE="templates/Oneindige-calls.yaml"
 
