@@ -30,6 +30,8 @@ repo:
 ```kubectl apply -f templates/metric-components.yaml```
 
 - Check de installatie: 
+```kubectl get deployment metrics-server -n kube-system```
+
 ```
 NAME             READY   UP-TO-DATE   AVAILABLE   AGE
 metrics-server   1/1     1            1           19d
@@ -45,7 +47,7 @@ metrics-server   1/1     1            1           19d
 
 #### Nu het php-apache deployen
 - Deploy het php-apache.yaml die ```OK!``` in frontend toont:
-```kubectl apply -f templates/php-apache.yaml```
+```kubectl apply -f php-apache.yaml -n techlab```
 
 
 #### Deploy een HPA scaling 
