@@ -44,8 +44,7 @@ metrics-server   1/1     1            1           19d
 
 
 ### installeer de oneindige-calls ping-er
-- Deploy het php-apache.yaml die ```OK!``` in frontend toont:
-```kubectl apply -f php-apache.yaml -n techlab```
+- ```kubectl apply -f templates/Oneindige-loop.yaml -n techlab```
 
 Wat doet dit BusyBox container?
 - De yaml is in ```templates/Oneindige-calls.yaml```
