@@ -52,6 +52,8 @@ Wat doet dit BusyBox container?
 
 ### maak dat oneidige-calls meer pods worden zodat de php-apache automatisch up-scales
 ```kubectl autoscale deployment oneindige-calls --replicas=8 -n techlab```
+anders kan het ook via live-edit: ```kubectl edit deployment oneindige-calls -n techlab```
+Dit is de Vim editor die dat doet, zoek replicas: 5 en zet het naar wens. Save+exit
 
 Kijk nu hoeveel deployments er zijn, wacht effe want het duurt minuut of twee voordat je wat ziet, als het goed is heb je nu 8 oneindige-loops en een stuk of 15 php-apache
 
