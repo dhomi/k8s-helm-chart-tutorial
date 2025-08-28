@@ -51,14 +51,14 @@ Wat doet dit BusyBox container?
  Voor deze scaling deployment gebruik ik de BusyBox in een container dat een super-lichtgewicht is met veel Linux tools, zoals wget en daarin runnen we een Loop ```wget http://php-apache``` die op zijn beurt load creert op de php-apache
 
 ### maak dat oneidige-calls meer pods worden zodat de php-apache automatisch up-scales
-```kubectl autoscale deployment oneindige-calls --replicas=8 -n techlab```
+```kubectl scale deployment oneindige-calls --replicas=8 -n techlab```
 anders kan het ook via live-edit: ```kubectl edit deployment oneindige-calls -n techlab```
 Dit is de Vim editor die dat doet, zoek replicas: 5 en zet het naar wens. Save+exit
 
 Kijk nu hoeveel deployments er zijn, wacht effe want het duurt minuut of twee voordat je wat ziet, als het goed is heb je nu 8 oneindige-loops en een stuk of 15 php-apache
 
 Speel nu ermee, zet de replicas op 1 en zie hoe php-apache aantallen verminderen
-```kubectl autoscale deployment oneindige-calls --replicas=1 -n techlab```
+```kubectl scale deployment oneindige-calls --replicas=1 -n techlab```
 
 Als je er klaar mee bent, en je wil alles verwijderen/cleanup, dan verwijder je de namespace: 
 ```kubectl delete ns techlab```
