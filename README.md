@@ -44,7 +44,7 @@ metrics-server   1/1     1            1           19d
 
 
 ### Deploy de oneindige-calls ping-er
-- ```kubectl apply -f templates/Oneindige-loop.yaml -n techlab```
+- ```kubectl apply -f templates/Oneindige-calls.yaml -n techlab```
 
 Wat doet dit ‘BusyBox based container’?
 Het loopt een GET request naar de php-apache toe om LOAD te creeren.
