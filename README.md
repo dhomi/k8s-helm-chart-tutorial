@@ -76,3 +76,22 @@ Als je er klaar mee bent, en je wil alles verwijderen/cleanup, dan verwijder je 
 ```kubectl get hpa -n techlab -w```
 
 Tip: gebruik tmux in je shell, per commando een pane: super cool ;)
+
+# EXPERIMENTS
+Run JMeter Tests using the Docker Image:
+You can run your JMeter test collection by mounting the test plan directory to the Docker container and specifying the JMX file to execute.
+
+Replace YOUR_TEST_DIRECTORY and YOUR_TEST_FILE.jmx with your actual test directory and JMX file.
+
+```docker run -it --rm -v /path/to/YOUR_TEST_DIRECTORY:/mnt/jmeter -w /mnt/jmeter justb4/jmeter -n -t /mnt/jmeter/YOUR_TEST_FILE.jmx```
+
+- -it - Runs the container in interactive mode.
+- --rm - Removes the container when it stops.
+- -v /path/to/YOUR_TEST_DIRECTORY:/mnt/jmeter - Mounts your test directory to the container at /mnt/jmeter.
+- -w /mnt/jmeter - Sets the working directory to /mnt/jmeter within the container.
+- justb4/jmeter - Specifies the JMeter Docker image.
+- -n - Runs JMeter in non-GUI mode.
+- -t /mnt/jmeter/YOUR_TEST_FILE.jmx - Specifies the JMX file to execute.
+View Test Results:
+After the test is completed, you can view the results in the console output. 
+You can also configure JMeter to save the test results in various formats, such as CSV or XML, by adding appropriate listeners to your JMX file.
