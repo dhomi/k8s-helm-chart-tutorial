@@ -110,7 +110,7 @@ Als je er klaar mee bent, en je wil alles verwijderen/cleanup, dan verwijder je 
 
 ## LES IV - DEBUG EN EXPERIMENTS
 
-# DEBUG COMMANDS:
+## DEBUG COMMANDS:
 - Check je deployments
 ```kubectl get deployments -n techlab -w```
 - Check je pods
@@ -120,7 +120,7 @@ Als je er klaar mee bent, en je wil alles verwijderen/cleanup, dan verwijder je 
 
 Tip: gebruik tmux in je shell, per commando een pane: super cool ;)
 
-# EXPERIMENTS
+## EXPERIMENTS
 Run JMeter Tests using the Docker Image:
 You can run your JMeter test collection by mounting the test plan directory to the Docker container and specifying the JMX file to execute.
 
