@@ -29,7 +29,7 @@ een deployment zorgt ervoor dat je app altijd draait (gewenst aantal replicas zi
 - maak de deployment aan in de techlab namespace: ```kubectl apply -f deployment.yaml -n techlab```# voer het uit
 - check het: ```kubectl get deployments -n techlab```
 - laat de pod zien: ```kubectl get pods -n techlab```
-- laat meer info zien: ```kubectl describe pod nginx-pod -n techlab```
+- laat meer info zien: ```kubectl describe pod techlab-deployment-<uuid> -n techlab```
 
 ### Services
 een service zorgt ervoor dat je app bereikbaar is, ook als de pod IP verandert.
@@ -37,7 +37,7 @@ een service zorgt ervoor dat je app bereikbaar is, ook als de pod IP verandert.
 - maak de service aan in de techlab namespace: ```kubectl apply -f service.yaml -n techlab```
 - check het: ```kubectl get services -n techlab``
 - laat meer info zien: ```kubectl describe service nginx-service -n techlab```
-- check de app in je browser: http://localhost:30001 (of een andere poort als je die hebt ingesteld)    
+- check de app in je browser: http://localhost:30083 (of een andere poort als je die hebt ingesteld)    
 
 
 ### Cleanup
