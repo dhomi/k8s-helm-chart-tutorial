@@ -5,10 +5,6 @@ Leer spelen met containers op Kubernetes met Docker, Helm Charts en prestatie- e
 Beni Dhomi, Quality Engineer. 
 repo: 
 ```git clone https://github.com/dhomi/k8s-helm-chart-tutorial.git```
-# Lessen
-- Les I:    Basis Helm Chart begrippen
-- Les II:   Leer variables en versionering
-- Les III:  Load en Performance testing met HPA
 
 ## LES I - BASIS K8S 
 initieel willen we een kubernetes node gebruiken
@@ -22,25 +18,25 @@ dan ook het kubectl commandline tool downloaden
 
 bekijk het bestand **pod.yaml**
 
-- maak de pod aan in de techlab namespace: ```kubectl apply -f pod.yaml –n techlab```
-- check het: ```kubectl get pods –n techlab```
-- laat meer info zien: ```kubectl describe pod techlab-pod –n techlab```
+- maak de pod aan in de techlab namespace: ```kubectl apply -f pod.yaml -n techlab```
+- check het: ```kubectl get pods -n techlab```
+- laat meer info zien: ```kubectl describe pod techlab-pod -n techlab```
 
 ### Een Deployment 
 een deployment zorgt ervoor dat je app altijd draait (gewenst aantal replicas zijn automatisch beheerd).
 - bekijk het bestand **deployment.yaml**
 
-- maak de deployment aan in de techlab namespace: ```kubectl apply -f deployment.yaml –n techlab```# voer het uit
-- check het: ```kubectl get deployments –n techlab```
-- laat de pod zien: ```kubectl get pods –n techlab```
-- laat meer info zien: ```kubectl describe pod nginx-pod –n techlab```
+- maak de deployment aan in de techlab namespace: ```kubectl apply -f deployment.yaml -n techlab```# voer het uit
+- check het: ```kubectl get deployments -n techlab```
+- laat de pod zien: ```kubectl get pods -n techlab```
+- laat meer info zien: ```kubectl describe pod nginx-pod -n techlab```
 
 ### Services
 een service zorgt ervoor dat je app bereikbaar is, ook als de pod IP verandert.
 - bekijk het bestand **service.yaml**
-- maak de service aan in de techlab namespace: ```kubectl apply -f service.yaml –n techlab```
-- check het: ```kubectl get services –n techlab``
-- laat meer info zien: ```kubectl describe service nginx-service –n techlab```
+- maak de service aan in de techlab namespace: ```kubectl apply -f service.yaml -n techlab```
+- check het: ```kubectl get services -n techlab``
+- laat meer info zien: ```kubectl describe service nginx-service -n techlab```
 - check de app in je browser: http://localhost:30001 (of een andere poort als je die hebt ingesteld)    
 
 

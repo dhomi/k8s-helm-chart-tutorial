@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: techlab-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: techlab
+  template:
+    metadata:
+      labels:
+        app: techlab
+    spec:
+      containers:
+      - name: techlab
+        image: nginx:latest
+        ports:
+        - containerPort: 80
