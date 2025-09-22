@@ -1,5 +1,9 @@
 # k8s-helm-chart-tutorial
 Leer spelen met containers op Kubernetes met Docker, Helm Charts en prestatie- en belastingstesten en schaling van pods
+Installer: 
+- Docker Desktop: https://www.docker.com/products/docker-desktop/
+  - Enable Kubernetes in your Docker desktop: Settings > Kubernetes enable it
+- Kubectl cli: https://kubernetes.io/docs/tasks/tools/
 
 ## Author
 Beni Dhomi, Quality Engineer. 
